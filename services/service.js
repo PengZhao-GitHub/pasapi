@@ -8,6 +8,8 @@ class PASServices {
         //
         console.log(request);
 
+        quote.result.totalPremium = 1000 * Math.floor( Math.random() * 11 );
+
         return quote;
     }
 
