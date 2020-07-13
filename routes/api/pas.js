@@ -32,10 +32,23 @@ router.get('/product/:id', (req, res) => {
 //Quotation API
 router.get('/quote', (req, res) =>{
     console.log("GET BODY", req.body);
+    console.log("GET header", req.headers);
+    console.log("end...");
     //res.send(JSON.stringify(req.body.identifier));
     const result = PASServices.getQuotation(req.body);
     res.json(result);
 });
+
+//Quotation API, it seems that GET cannot receive Body from Angular. Postman works
+router.post('/quote', (req, res) =>{
+    console.log("GET BODY", req.body);
+    console.log("GET header", req.headers);
+    console.log("end...");
+    //res.send(JSON.stringify(req.body.identifier));
+    const result = PASServices.getQuotation(req.body);
+    res.json(result);
+});
+
 
 
 

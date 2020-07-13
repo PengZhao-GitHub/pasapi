@@ -99,7 +99,7 @@ const medicalProduct = {
             {
                 riskCode: 'r07',
                 riskName: '異常妊娠・異常分娩',
-                coverageCode: 'M001C01',
+                coverageCode: 'c009',
                 coverageName: '異常妊娠・異常分娩一時金',
                 limitOption: [
                     100000
