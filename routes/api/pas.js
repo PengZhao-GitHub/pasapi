@@ -46,6 +46,7 @@ router.post('/quote', (req, res) =>{
     console.log("end...");
     //res.send(JSON.stringify(req.body.identifier));
     const result = PASServices.getQuotation(req.body);
+
     res.json(result);
 });
 

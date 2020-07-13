@@ -8,7 +8,23 @@ class PASServices {
         //
         console.log(request);
 
-        quote.result.totalPremium = 1000 * Math.floor( Math.random() * 11 );
+        var coverages = quote.product.coverages;
+
+        coverages = coverages.filter(t => {
+            for (let i = 0; i < request.coverages.length; i++) {
+                if (t.coverageCode === request.coverages[i].coverageCode) {
+                    return true;
+                };
+            }
+        } );
+
+        console.log(coverages);
+
+        quote.result.totalPremium = 0;
+        
+        coverages.forEach(c => {
+            quote.result.totalPremium = quote.result.totalPremium + c.preimum;
+        })
 
         return quote;
     }
@@ -17,13 +33,13 @@ class PASServices {
         //Process the request and get the product
         //Place holder
         //
-        if(id==='001') {
+        if (id === '001') {
             return medicalProduct;
         } else {
             return null;
         }
     }
-        
+
 
 }
 
