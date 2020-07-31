@@ -1,7 +1,7 @@
 const medicalProduct = {
     
     product: {
-        productCode: '001',
+        productCode: '004',
         productName: 'スーパー医療保険',
         terms: [
             6,
@@ -16,7 +16,7 @@ const medicalProduct = {
                 limitOption: [
                     200000
                 ],
-                womenOnly: false
+
             },
 
             {
@@ -29,7 +29,7 @@ const medicalProduct = {
                     500000,
                     800000
                 ],
-                womenOnly: false
+
             },
             {
                 riskCode: 'r02',
@@ -40,7 +40,7 @@ const medicalProduct = {
                     50000,
                     100000
                 ],
-                womenOnly: false
+
             },
             {
                 riskCode: 'r03',
@@ -52,7 +52,7 @@ const medicalProduct = {
                     500000,
                     800000
                 ],
-                womenOnly: false
+
             },
             {
                 riskCode: 'r04',
@@ -63,7 +63,7 @@ const medicalProduct = {
                     50000,
                     100000
                 ],
-                womenOnly: false
+
             },
             {
                 riskCode: 'r05',
@@ -73,39 +73,7 @@ const medicalProduct = {
                 limitOption: [
                     20000000
                 ],
-                womenOnly: false
             },
-            {
-                riskCode: 'r06',
-                riskName: '女性特有のガン',
-                coverageCode: 'c007',
-                coverageName: '女性特有のガン診断一時金',
-                limitOption: [
-                    100000
-                ],
-                womenOnly: true
-            },
-            {
-                riskCode: 'r06',
-                riskName: '女性特有のガン',
-                coverageCode: 'c008',
-                coverageName: '女性特有のガン入院療養一時金',
-                limitOption: [
-                    300000,
-                    500000
-                ],
-                womenOnly: true
-            },
-            {
-                riskCode: 'r07',
-                riskName: '異常妊娠・異常分娩',
-                coverageCode: 'c009',
-                coverageName: '異常妊娠・異常分娩一時金',
-                limitOption: [
-                    100000
-                ],
-                womenOnly: true
-            }
 
         ]
     }
