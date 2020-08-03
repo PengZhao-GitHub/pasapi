@@ -59,7 +59,6 @@ const medicalProduct = {
                 limitOption: [
                     100000
                 ],
-                womenOnly: true
             },
         ]
     }

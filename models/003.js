@@ -25,9 +25,12 @@ const medicalProduct = {
                 coverageCode: 'c002',
                 coverageName: 'ガン入院療養一時金',
                 limitOption: [
+                    200000,
                     300000,
                     500000,
-                    800000
+                    800000,
+                    1000000,
+                    
                 ],
                 womenOnly: false
             },
