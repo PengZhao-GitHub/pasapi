@@ -4,7 +4,7 @@ const medicalProduct003 = require('../models/003');
 const medicalProduct004 = require('../models/004');
 
 const quote = require('../models/quote');
-const { product } = require('../models/002');
+//const { product } = require('../models/002');
 
 class PASServices {
 
@@ -42,11 +42,18 @@ class PASServices {
     }
 
     static getQuotation(request) {
+        
+        //Just a sample. This is the step to invoke the PAS APIs
+        
+        let sexRatio = 1;
+        let ageRatio = 1;
+        let coverageRate = 0.01; 
+
         //
-        console.log(request);
+        console.log("quotation parameters:", request);
 
-        var coverages = quote.product.coverages;
-
+        /*var coverages = quote.product.coverages;
+    
         coverages = coverages.filter(t => {
             for (let i = 0; i < request.coverages.length; i++) {
                 if (t.coverageCode === request.coverages[i].coverageCode) {
@@ -54,15 +61,32 @@ class PASServices {
                 };
             }
         });
+        */
 
+        if (request.customer.sex === 'F') {
+            sexRatio = 0.8;
+        }
+
+        ageRatio = request.customer.age / 300;
+
+
+        var coverages = request.coverages;
         console.log(coverages);
 
-        quote.result.totalPremium = 0;
-
+        
+        let sum = 0;
         coverages.forEach(c => {
-            quote.result.totalPremium = quote.result.totalPremium + c.preimum;
+            if (c.option < 20000000){
+                sum += c.option * coverageRate * ageRatio * sexRatio;
+                console.log(c.coverageCode, sum)
+            } else {
+                sum += 500;
+            }
+                
         })
 
+        quote.result.totalPremium = Math.ceil(sum);
+        
         return quote;
     }
 }

@@ -1,10 +1,14 @@
 const quote = {
     
+    /*
+    
     customer: {
         age: 20,
         sex: 'M'
     },
+    */
 
+    /*
     product: {
         produceCode: '001',
         productName: 'スーパー医療保険',
@@ -87,7 +91,7 @@ const quote = {
 
         ]
     },
-
+    */
     result: {
         totalPremium: 40000
     }
