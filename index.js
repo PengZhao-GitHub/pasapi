@@ -1,5 +1,6 @@
 const express = require('express');
 const apiRouter = require('./routes/api/pas');
+const adminRouter = require('./routes/admin');
 const cors = require('cors');
 
 const PORT = process.env.PORT || 5000; //Check the process.env configuration
@@ -12,13 +13,19 @@ app.use(cors());
 //Body parser middleware to be able to receive body
 app.use(express.json());
 
+//  Bodyparser to handle form data
+app.use(express.urlencoded( { extended: false}));
+app.use(express.json());
+
 
 app.get('/', (req, res) => {
     res.send("This is the PAS API!");
 });
 
 
+app.use('/admin', adminRouter);
 app.use('/pas/api', apiRouter);
+
 
 app.listen(PORT, ()=> console.log(`Server started on port ${PORT}`));
 
