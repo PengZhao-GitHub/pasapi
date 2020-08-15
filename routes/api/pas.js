@@ -38,6 +38,11 @@ function verifyToken(req, res, next) {
 }
 
 //Get product
+router.get('/', (req, res) => {
+    res.send('PAS API List');
+})
+
+//Get product
 router.get('/product/:id', (req, res) => {
     const result = PASServices.getProducts(req.params.id);
     res.json(result);
