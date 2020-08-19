@@ -7,6 +7,8 @@ const PORT = process.env.PORT || 5000; //Check the process.env configuration
 
 const app = express();
 
+app.set('view engine', 'ejs');
+
 //https://stackoverflow.com/questions/56328474/origin-http-localhost4200-has-been-blocked-by-cors-policy-in-angular7
 app.use(cors());
 
@@ -19,7 +21,7 @@ app.use(express.json());
 
 
 app.get('/', (req, res) => {
-    res.send("This is the PAS API!");
+    res.render('home');
 });
 
 
