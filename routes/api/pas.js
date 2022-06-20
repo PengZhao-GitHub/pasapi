@@ -9,7 +9,7 @@ const { JsonWebTokenError } = require('jsonwebtoken');
 
 // Verify token funciton
 function verifyToken(req, res, next) {
-    /* by-pass token verification
+
     // Get auth header value
     const bearerHeader = req.headers['authorization'];
     //console.log(req.headers);
@@ -34,9 +34,7 @@ function verifyToken(req, res, next) {
         res.sendStatus(403);
 
     }
-    */
-    
-    next();
+
 
 
 }
@@ -63,6 +61,7 @@ router.get('/quote', (req, res) => {
     res.json(result);
 });
 
+/*
 //Quotation API, it seems that GET cannot receive Body from Angular. Postman works
 router.post('/quote', verifyToken, (req, res) => {
     console.log("GET BODY", req.body);
@@ -81,6 +80,16 @@ router.post('/quote', verifyToken, (req, res) => {
     })
 
 
+});
+*/
+
+//by pass token verification
+router.post('/quote', (req, res) => {
+    console.log("GET BODY", req.body);
+    console.log("GET header", req.headers.authorization);
+
+    const result = PASServices.getQuotation(req.body);
+    res.json(result);
 });
 
 
