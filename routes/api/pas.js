@@ -9,6 +9,7 @@ const { JsonWebTokenError } = require('jsonwebtoken');
 
 // Verify token funciton
 function verifyToken(req, res, next) {
+    /* by-pass token verification
     // Get auth header value
     const bearerHeader = req.headers['authorization'];
     //console.log(req.headers);
@@ -33,6 +34,9 @@ function verifyToken(req, res, next) {
         res.sendStatus(403);
 
     }
+    */
+    
+    next();
 
 
 }
